@@ -1,0 +1,286 @@
+.container {
+    max-width: 1366px;
+    padding: 1rem;
+    margin: auto;
+    margin-top: 1.5rem;
+}
+.text-center{
+    text-align: center;
+}
+.icon-container{
+    margin-top: 50px;
+    background-color: #ebe6e6;
+    box-sizing: 0px -5px #bcc1cf;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+.icon-container::before{
+    border-radius: 50%;
+    content: '';
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    right: -15px;
+    top: -18px;
+    position: absolute;
+    z-index: -1;
+}
+#scissors-icon::before{
+    background-color: #e8a10c;
+    box-shadow: 0px 5px #c76918;
+}
+#paper-icon::before{
+    background-color: #4464f6;
+    box-shadow: 0px 5px #2a48c3;
+}
+#spock-icon::before{
+    background-color: #50bdd2;
+    box-shadow: 0px 5px #2c8eab;  
+}
+#rock-icon::before{
+    background-color: #b8341d;
+  box-shadow: 0px 5px #e22e2e;
+}
+#lizard-icon::before{
+    background-color: #8e5de4;
+    box-shadow: 0px 5px #5c39a3;
+}
+
+.winner::after{
+position: absolute;
+border-radius: 50%;
+content: '';
+width: auto;
+height: 300px;
+z-index: -2;
+background: radial-gradient(circle at center, #2b3858 45%, #263554 45%, #263554 58%, #223351 58%) ;
+}
+.loser::after{
+position: absolute;
+border-radius: 50%;
+content: '';
+width: auto;
+height: 300px;
+z-index: -2;
+background: radial-gradient(circle at center, #2b3858 45%, #263554 45%, #263554 58%, #223351 58%);
+}
+html{
+    height: 100%;
+    width: 100%;
+}
+body{
+    /* overflow-x:hidden ;
+    overflow-y: hidden; */
+    background: radial-gradient(circle at top,  #9ab9e0, #00000e);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    color: #fff; 
+}
+p,h1 ,h2,h4,h3,h6,h5{
+    text-transform: uppercase;
+}
+button{
+    border: none;
+    outline: none;
+
+}
+#title-container{
+    width: 50%;
+    height: auto;
+    border: 2px solid #606e85;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+#title-container #scoreboard {
+height: 7rem;
+width: 8rem;
+background: #fafafa;
+color: #2a46c0;
+}
+#title-container #scoreboard .score-title{
+    font-size: 18px;
+    margin-top: 8px;
+}#title-container #scoreboard .actual-score{
+    color: #3b4363;
+    font-size: 75px;
+    margin-top: -10px;
+}
+#choices-container{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease-out;
+    opacity: 1;
+    height: auto;
+}
+#choices-container #pentagon {
+    z-index:-1
+}
+#choices-container #scissors-icon{
+    transition: 0.5s all ease-in-out;
+    margin-top: -325px;
+    cursor: pointer;
+}
+#choices-container #scissors-icon:hover{
+    transform: scale(1.5);
+}
+#choices-container #paper-icon  {
+    margin-top: -10px;
+    margin-left: 300px;
+    transition: 0.5s all ease-in-out;
+    cursor: pointer;
+}
+#choices-container #paper-icon:hover{
+    transform: scale(1.5);
+}
+
+#choices-container #spock-icon  {
+    margin-top: -98px;
+    margin-right: 300px;
+    transition: 0.5s all ease-in-out;
+    cursor: pointer;
+}
+#choices-container #spock-icon:hover{
+    transform: scale(1.5);
+}
+#choices-container #rock-icon  {
+    margin-top: 76px;
+    margin-left: 200px;
+    transition: 0.5s all ease-in-out;
+    cursor: pointer;
+}
+#choices-container #rock-icon:hover{
+    transform: scale(1.5);
+}
+#choices-container #lizard-icon  {
+    margin-top: -96px;
+    margin-right: 200px;
+    transition: 0.5s all ease-in-out;
+    cursor: pointer;
+}
+#choices-container #lizard-icon:hover{
+    transform: scale(1.5);
+}
+
+
+
+
+
+#game-play-container{
+    width: 60%;
+    justify-content: space-around;
+    display: none;position: relative;
+
+}
+#game-play-container #your-pick-container div[id$='-icon']{
+    zoom: 175%;
+}
+#game-play-container #outcome-container {
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 70px;
+    padding-right: 70px;
+    display: none;
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.6s ease opacity, 0.6s ease transform;
+}
+#game-play-container #outcome-container #your-outcome {
+    padding-bottom: 10px; 
+}
+  #game-play-container #outcome-container #play-again {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    color: #3b4363;
+    height: 2rem;
+    font-size: large;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer; 
+}
+#game-play-container #house-pick-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 11rem; 
+}
+    #game-play-container #house-pick-container #house-pick-circle {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      background: #172240;
+      margin-bottom: 40px; 
+    }
+    #game-play-container #house-pick-container div[id$='-icon'] {
+      zoom: 175%; }
+    #game-play-container #house-pick-container #icon-house {
+      display: none;
+     }
+     #overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2; 
+     }
+   
+  #overlay #rules-card {
+    background-color: #e4e4e4;
+    height: auto;
+    width: 330px;
+    border-radius: 10px;
+    padding-bottom: 50px;
+    position: relative;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+ 
+ #rules-button{
+    height: 3rem;
+    width: 9rem;
+    color: #fff;
+    border: 2px solid#606e85;
+    background-color: transparent;
+    border-radius: 15px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+#rules-button:hover{
+    background-color: #fafafa;
+    color: #263554;
+    cursor: pointer;
+    font-weight: bold;
+}
+    #overlay #rules-card #rules-header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content:space-between ; }
+      #overlay #rules-card #rules-header #rules-title {
+        color: #3b4363; }
+      #overlay #rules-card #rules-header #close-rules-button {
+        background-color: Transparent; }
+        #overlay #rules-card #rules-header #close-rules-button img {
+          cursor: pointer; }

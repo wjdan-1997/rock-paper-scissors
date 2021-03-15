@@ -11,5 +11,13 @@
   "dependencies": {
     "node-sass": "^5.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wjdan-1997/rock-paper-scissors.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wjdan-1997/rock-paper-scissors/issues"
+  },
+  "homepage": "https://github.com/wjdan-1997/rock-paper-scissors#readme"
 }

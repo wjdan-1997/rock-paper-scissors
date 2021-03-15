@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  
+</head>
+<body>
+<div id="overlay" >
+  <div id="rules-card" class="container">
+      <div id="rules-header">
+          <h1 id="rules-title">Rules</h1>
+          <button id="close-rules-button">
+        <img src="images/icon-close.svg" alt="icons">
+          </button>
+      </div>
+      <img src="images/image-rules-bonus.svg" alt="bonus">
+  </div>
+</div>
+
+ <button id="rules-button" class="text-center">RULES</button>
+
+<div id="title-container" class="container">
+    <div id="title">
+        <img src="images/logo-bonus.svg" alt="logo">
+    </div>
+    <div id="scoreboard" class="text-center">   
+        <p class="text-cednter score-title">score</p>
+        <p class="actual-score">-2</p>
+    </div>
+</div>
+
+<div id="choices-container" class="container text-center">
+  <div id="pentagon">
+      <img src="images/bg-pentagon.svg" alt="big">
+  </div>
+<button id="scissors-icon" class="icon-container icon-container-scissors" value='scissors'>
+    <img src="images/icon-scissors.svg" alt="scissors">
+</button>
+<button id="paper-icon" class="icon-container icon-container-paper" value='paper'>
+    <img src="images/icon-paper.svg" alt="paper">
+</button>
+<button id="spock-icon" class="icon-container icon-container-spock" value='spock'>
+    <img src="images/icon-spock.svg" alt="spock">
+</button>
+<button id="rock-icon" class="icon-container icon-container-rock" value='rock'>
+    <img src="images/icon-rock.svg" alt="rock">
+</button>
+<button id="lizard-icon" class="icon-container icon-container-paper" value='paper'>
+    <img src="images/icon-paper.svg" alt="paper">
+</button>
+</div>  
+
+ 
+
+  <div id="game-play-container" class="container text-center">
+      <div id="your-pick-container">
+          <h3 id="your-pick-container">you Picked</h3>
+          <div id="icon-player">
+             
+          </div>
+      </div>
+
+      <div id="outcome-container">
+        <h1 id="your-outcome"></h1>
+        <button id="play-again">PLAY AGAIN</button>
+      </div>
+      <div id="house-pick-container">
+        <h3 id="house-pick-title">the house picked</h3>
+        <div id="house-pick-circle"></div>
+        <div id="icon-house"></div>
+      </div>
+  </div>
+</body>
+<script src="js/app.js"></script>
+</html>
